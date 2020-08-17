@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StreamingVideoOptions, StreamingMedia } from '@ionic-native/streaming-media/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,19 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private streamingMedia: StreamingMedia) {}
 
+  PlayVideo(){
+   const options: StreamingVideoOptions = {
+    successCallback: () => console.log('Video played'),
+    errorCallback: (e) => console.log('Error streaming'),
+    orientation: 'landscape',
+    shouldAutoClose: true,
+    controls: false
+
+   };
+   this.streamingMedia.playVideo('https://firebasestorage.googleapis.com/v0/b/proyectovideoio.appspot.com/o/theweeknd.mp4?alt=media&token=9aac20ba-b1db-4594-b5ec-36f1e349ff14', options);
+
+
+  }
 }
