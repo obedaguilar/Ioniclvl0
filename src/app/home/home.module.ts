@@ -6,6 +6,9 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { StreamingVideoOptions, StreamingMedia } from '@ionic-native/streaming-media/ngx';
+import { VideoPlayer } from '@ionic-native/video-player/ngx';
+
+
 
 @NgModule({
   imports: [
@@ -15,6 +18,6 @@ import { StreamingVideoOptions, StreamingMedia } from '@ionic-native/streaming-m
     HomePageRoutingModule
   ],
   declarations: [HomePage],
-  providers: [StreamingMedia]
+  providers: [StreamingMedia, VideoPlayer]
 })
 export class HomePageModule {}
